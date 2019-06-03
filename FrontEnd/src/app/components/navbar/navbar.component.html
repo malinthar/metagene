@@ -1,0 +1,40 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-dark  ">
+    <a class="navbar-brand" style="font-size: 150%;" href="#"><span style="font-weight:bold;color:mediumblue">M</span>eta<span style="font-weight:bold;color:yellow">G</span>ene <i class="fas fa-burn" style="color:yellow"></i></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/" ><i class="fas fa-home"></i><br><span style="font-weight: bolder;font-size:90%">Home</span> <span class="sr-only">(current)</span></a>
+        </li>
+      <!--  <li class="nav-item">
+            <a class="nav-link" routerLink="/canvas" ><i class="fas fa-chart-line"></i><br><span style="font-weight: bolder;font-size:90%">Canvas</span></a>
+          </li> -->
+        <li class="nav-item">
+            <a class="nav-link" routerLink="/help"><i class="fas fa-info-circle"></i><br><span style="font-weight: bolder;font-size:90%">Help</span></a>
+        </li>
+      
+        <li class="nav-item">
+            <a class="nav-link"  routerLink="/feedback"><i class="far fa-comment"></i><br><span style="font-weight: bolder;font-size:90%">Feedback</span></a>
+          </li>
+        
+        </ul>
+        <ul class="navbar-nav mr-right">
+            <li  *ngIf="auth.isLoggedIn()" class="nav-item">
+                <a class="nav-link" routerLink="/dashboard"><i class="fas fa-tachometer-alt"></i><br><span style="font-weight: bolder;font-size:90%">Dashboard</span></a>
+              </li>
+              <li *ngIf="auth.isLoggedIn()" class="nav-item">
+                  <a class="nav-link" (click)="logout()" href="#"><i class="fas fa-sign-out-alt"></i><br><span style="font-weight: bolder;font-size:90%">Signout</span></a>
+                </li>
+  
+            <li *ngIf="!auth.isLoggedIn()" class="nav-item">
+                <a class="nav-link" routerLink="/register"><i class="fas fa-arrow-alt-circle-right"></i><br><span style="font-weight: bolder;font-size:90%">Register</span></a>
+              </li>
+              <li *ngIf="!auth.isLoggedIn()" class="nav-item">
+                <a class="nav-link" routerLink="/login"><i class="fas fa-sign-in-alt"></i><br><span style="font-weight: bolder;font-size:90%">Signin</span></a>
+              </li>
+        </ul>
+    </div>
+  </nav>

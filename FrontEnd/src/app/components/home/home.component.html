@@ -1,0 +1,60 @@
+<ngx-spinner
+bdColor="rgba(51,51,51,0.8)"
+size="medium"
+color="green"
+type="line-scale-pulse-out">
+<p style="font-size: 20px; color:white">{{message}}</p>
+</ngx-spinner>
+
+<div class="row container" style="padding:0;margin-left:4vw;">
+  <div class="col col-md-5 card bg-light" style="margin-top:2%;margin-right:1vw;float:left;padding:2vw;">
+    <p> <span style="font-weight:bold;color:mediumblue">M</span><span>eta</span><span style="font-weight:bold;color:yellow">G</span><span>ene</span> <i class="fas fa-burn" style="color:yellow"></i>  is a micro-array gene expression data visualizer, is capable of visualizing plots related to bio-informatics domain. Verison 1.0 is capable of plotting six kinds of graphs.<span style="color:black;font-weight: bold;font-size: 120%">Get Started by Entering a GEO Accession number!</span></p>
+    <div></div>
+   </div>
+    <div class="col col-md-3 card bg-light" style="margin-top:2%;float:left;padding:2vw;">
+            <form  (ngSubmit)="visualize()" enctype="multipart/form-data">
+                 <div class="form-group">
+                      <label for="acnum">Accession Number</label>
+                      <input type="text" class="form-control" name="acnum" [(ngModel)]="details.accnum" placeholder="Enter Accession Number"/>
+                  </div>
+                  <div style="margin-left:30%;" *ngIf="aquired==false" ><button  (click)="getData()" class="btn bg-primary">Submit</button></div>
+                  <div *ngIf="aquired==true"  class="form-group">
+                      <label for="gtype">Graph Type</label>
+                      <select class="form-control" [(ngModel)]="details.gtype" name="gtype">
+                        <option value="scatter">Scatter plot</option>
+                        <option value="heatmap">HeatMap</option>
+                        <option value="box">Box plot</option>
+                        <option value="hist">Histogram</option>
+                        <option value="bar">Bar Plot</option>
+                      </select> 
+                  </div> 
+                   
+                   <div *ngIf="details.gtype=='scatter'" class="form-group">
+                    <label for="gene1">Gene 1</label>
+                    <select class="form-control" [(ngModel)]="gene1" name="gene1">
+                        <option *ngFor="let gene of genes" value="{{gene}}">{{gene}}</option>
+                    </select> 
+                  </div> 
+                  <div *ngIf="details.gtype=='scatter'" class="form-group">
+                  <label for="gene1">Gene 2</label>
+                  <select class="form-control" [(ngModel)]="gene2" name="gene2">
+                    <option *ngFor="let gene of genes" value="{{gene}}">{{gene}}</option>
+                  </select> 
+                  </div>  
+                  <div *ngIf="details.gtype=='bar'" class="form-group">
+                    <label for="sample">Sample(Single time point)</label>
+                    <select class="form-control" [(ngModel)]="sample" name="sample">
+                        <option *ngFor="let gene of genes" value="{{gene}}">{{gene}}</option>
+                    </select> 
+                  </div> 
+                  <div *ngIf="details.gtype=='bar'" class="form-group">
+                    <label for="number">Gene range</label>
+                    <input type="number" class="form-control" name="number" [(ngModel)]="details.number[0]" placeholder="From"/>
+                    <input type="number" class="form-control" name="number" [(ngModel)]="details.number[1]" placeholder="To"/>
+                  </div>
+                  <input *ngIf="aquired==true" type="submit" value="visualize" style="margin-left:30%;" class="btn bg-primary"/>
+
+            </form>         
+  </div>
+ 
+  </div>

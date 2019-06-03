@@ -1,0 +1,18 @@
+<div class="col col-md-8.5 card bg-light" style="margin-top:2%;margin-left:1vw;float:left;padding:2vw;">
+  <div *ngFor="let key of keys"><p><span style="font-weight:600">{{key}}:</span> {{description[key]}}</p></div>
+  <div><a class ='btn bg-success' href="/static/assets/json/dataset.csv">Download Pivoted Table</a></div>
+</div>
+
+<div  [innerHTML]="safeHtml(graph)" id="graphdiv" class="container row card bg-light" style="float:left;margin-top:4%;margin-bottom:4%;margin-left:1vw"></div>
+<div class="row col-md-7" style="margin-bottom:4%">
+<div *ngIf="!add" (click)="gettitle()"  class="btn bg-danger row"  style="float:left;margin-top:1vh;margin-bottom:4%;margin-left:1vw" >Add this plot to favourites <i class="far fa-star"></i></div>
+<div *ngIf="add" class="card bg-light" style="padding:2%">
+<form  (submit)=addfav()>
+  <div class="form-group">
+      <label for="title">Title</label>
+      <input type="text" class="form-control" name="title" [(ngModel)]="title" placeholder="title"/>
+  </div>
+  <input type="submit" style="margin-left:40%;" class="btn btn-success" value="Save">
+ </form>
+</div>
+</div>

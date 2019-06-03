@@ -1,0 +1,10 @@
+
+<div class="col col-md-4 card-bg-light " style="margin-top:4%;padding:2vw;">
+  
+  <ul class="list-group">  
+    <div class="bg-danger" style="height:7vh; padding:1vw"><h4 style="color:white;text-align: center">Favourites <i class="far fa-star"></i></h4></div>
+    <a *ngFor="let fav of favs"   (click)="viewfav(fav[1])" class="list-group-item list-group-item-action list-group-item-primary">{{fav[2]}} ,On Accession:{{fav[3]}}<span class="ey" style="color:black;float:right"><i class="fas fa-eye"></i></span><br><span style="color:tomato;font-size: 70%;">{{fav[0]}}</span></a>
+  </ul>
+</div>
+
+

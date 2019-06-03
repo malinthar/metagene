@@ -1,0 +1,16 @@
+<div class="container row pannel-group">
+  <div class="col col-md-8.5 card bg-light pannel pannel-info" style="margin-top:2%;float:left;padding:2vw;">
+    <form  (ngSubmit)="onFeedBackSubmit()" enctype="multipart/form-data">
+      <div class="form-group">
+        <label for="titile">Title</label>
+        <input type="text" class="form-control" name="title" [(ngModel)]="ticket.title" placeholder="Enter Title"/>
+      </div>
+      <div class="form-group">
+        <label for="description">Description</label>
+        <textarea  rows="10" class="form-control" name="description" [(ngModel)]="ticket.description" placeholder="description"></textarea>
+      </div>
+      <input  type="submit" value="Feed Back" style="margin-left:45%;" class="btn bg-primary"/>
+
+    </form>
+  </div>
+</div>
