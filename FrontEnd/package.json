@@ -24,7 +24,7 @@
     "angular-json-table": "0.0.6",
     "angular-progress-bar": "^1.0.9",
     "core-js": "^2.5.4",
-    "jspdf": "^1.5.3",
+    "jspdf": "^2.3.1",
     "ng-flash-messages": "^0.3.0",
     "ngx-progressbar": "^2.1.1",
     "ngx-spinner": "^7.0.0",
