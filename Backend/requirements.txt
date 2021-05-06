@@ -16,7 +16,7 @@ colorama==0.4.1
 Eel==0.10.4
 Flask==1.0.2
 Flask-Bcrypt==0.7.1
-Flask-Cors==3.0.7
+Flask-Cors==3.0.9
 Flask-JWT-Extended==3.18.0
 Flask-MySQL==1.4.0
 Flask-MySQLdb==0.2.0
