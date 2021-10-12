@@ -23,7 +23,7 @@ def  create_app(test_config=None):
     )
     app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
     #Config MongoDB using pymongo package 
-    app.config["MONGO_URI"] = "mongodb://metaown:metaown123@ds143326.mlab.com:43326/metagene"
+    app.config["MONGO_URI"] = ""
     
     if test_config is None:
     # load the instance config, if it exists, when not testing
