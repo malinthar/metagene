@@ -41,7 +41,7 @@ MarkupSafe==1.1.0
 mock==2.0.0
 more-itertools==7.0.0
 mysqlclient==1.4.1
-numpy==1.16.1
+numpy==1.22.0
 opencv-python==4.0.0.21
 packaging==19.0
 pandas==0.24.1
